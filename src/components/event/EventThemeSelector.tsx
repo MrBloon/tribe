@@ -37,7 +37,7 @@ const EventThemeSelector: React.FC = () => {
 
         {/* Theme preview area */}
         <div className={styles.themePreview}>
-          <ThemeParticles theme={theme} />
+          <ThemeParticles theme={theme} isPreview={true} />
         </div>
       </div>
     </div>

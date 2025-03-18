@@ -1,38 +1,43 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './ThemeParticles.module.scss';
+import ConfettiParticles from './ConfettiParticles';
+import EmojiParticles from './EmojiParticles';
 
 interface ThemeParticlesProps {
   theme: 'Minimal' | 'Emoji' | 'Confetti';
+  isPreview?: boolean;
 }
 
-const ThemeParticles: React.FC<ThemeParticlesProps> = ({ theme }) => {
-  // This is a placeholder component that will be implemented later
-  // with tsparticles for different theme background effects
-  
+const ThemeParticles: React.FC<ThemeParticlesProps> = ({ theme, isPreview = false }) => {  
+  // Debug log to check when theme changes
+  useEffect(() => {
+    console.log(`Theme changed to: ${theme}, isPreview: ${isPreview}`);
+  }, [theme, isPreview]);
+
+  // Log emoji rendering
+  if (theme === 'Emoji') {
+    console.log("Rendering EmojiParticles component");
+  }
+
   return (
-    <div className={styles.particlesContainer}>
-      {/* tsparticles will be implemented here */}
+    <div className={isPreview ? styles.previewParticlesContainer : styles.particlesContainer}>
       {theme === 'Confetti' && (
-        <div className={styles.confettiParticles}>
-          {/* Confetti particles will be implemented here */}
-        </div>
+        <ConfettiParticles isPreview={isPreview} />
       )}
       
       {theme === 'Emoji' && (
-        <div className={styles.emojiParticles}>
-          {/* Emoji particles will be implemented here */}
-        </div>
+        <EmojiParticles isPreview={isPreview} />
       )}
       
       {theme === 'Minimal' && (
         <div className={styles.minimalParticles}>
-          {/* Minimal particles (none) will be implemented here */}
+          {/* Minimal theme has no particles */}
         </div>
       )}
       
-      {theme !== 'Minimal' && (
+      {theme !== 'Minimal' && theme !== 'Confetti' && theme !== 'Emoji' && (
         <div className={styles.themeMessage}>
           {theme} theme particles will be implemented here
         </div>

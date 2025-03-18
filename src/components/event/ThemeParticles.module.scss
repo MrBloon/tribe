@@ -1,9 +1,18 @@
 .particlesContainer {
   position: fixed;
   inset: 0;
-  z-index: -10;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+.previewParticlesContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 0.25rem;
 }
 
 .themeMessage {
@@ -21,12 +30,14 @@
   position: absolute;
   inset: 0;
   background-color: transparent;
+  z-index: 15;
 }
 
 .emojiParticles {
   position: absolute;
   inset: 0;
   background-color: transparent;
+  z-index: -1;
 }
 
 .minimalParticles {
