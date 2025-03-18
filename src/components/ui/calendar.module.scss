@@ -1,0 +1,169 @@
+.calendar {
+  padding: 0.75rem;
+}
+
+.months {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+
+.captionLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navButton {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: transparent;
+  padding: 0;
+  opacity: 0.5;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.navButtonPrevious {
+  position: absolute;
+  left: 0.25rem;
+}
+
+.navButtonNext {
+  position: absolute;
+  right: 0.25rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-right: 0.25rem;
+}
+
+.headRow {
+  display: flex;
+}
+
+.headCell {
+  color: var(--muted-foreground);
+  border-radius: 0.375rem;
+  width: 2rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.cell {
+  position: relative;
+  padding: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  
+  &:focus-within {
+    position: relative;
+    z-index: 20;
+  }
+  
+  &:has([aria-selected]) {
+    background-color: var(--accent);
+  }
+  
+  &:has([aria-selected].dayRangeEnd) {
+    border-radius: 0 0.375rem 0.375rem 0;
+  }
+}
+
+.day {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-weight: 400;
+  
+  &[aria-selected] {
+    opacity: 1;
+  }
+}
+
+.dayRangeStart {
+  &[aria-selected] {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+.dayRangeEnd {
+  &[aria-selected] {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+.daySelected {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  
+  &:hover, &:focus {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+.dayToday {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.dayOutside {
+  color: var(--muted-foreground);
+  
+  &[aria-selected] {
+    color: var(--muted-foreground);
+  }
+}
+
+.dayDisabled {
+  color: var(--muted-foreground);
+  opacity: 0.5;
+}
+
+.dayRangeMiddle {
+  &[aria-selected] {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+.dayHidden {
+  visibility: hidden;
+} 

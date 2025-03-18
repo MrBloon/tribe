@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #6b7280;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
+  
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+    ring-width: 0;
+  }
+} 

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import styles from './VisibilitySelector.module.scss';
 
 interface VisibilitySelectorProps {
   isPublic?: boolean;
@@ -15,10 +16,10 @@ const VisibilitySelector: React.FC<VisibilitySelectorProps> = ({
   };
 
   return (
-    <div className="flex items-center">
+    <div className={styles.container}>
       <Button
         variant="ghost"
-        className="flex items-center space-x-2 py-2 rounded-md hover:bg-neutral-50 focus-visible:ring-0"
+        className={styles.button}
         onClick={handleVisibilityClick}
       >
         <svg 
@@ -27,13 +28,13 @@ const VisibilitySelector: React.FC<VisibilitySelectorProps> = ({
           viewBox="0 0 16 16" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="text-gray-600"
+          className={styles.icon}
         >
           <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
           <path d="M3 8H13" stroke="currentColor" strokeWidth="1.5" />
           <path d="M8 3V13" stroke="currentColor" strokeWidth="1.5" />
         </svg>
-        <span className="text-sm text-gray-600">
+        <span className={styles.text}>
           {isPublic ? 'Public' : 'Privé'}
         </span>
         <svg 
@@ -42,7 +43,7 @@ const VisibilitySelector: React.FC<VisibilitySelectorProps> = ({
           viewBox="0 0 16 16" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="text-gray-400"
+          className={styles.arrowIcon}
         >
           <path 
             d="M4 6L8 10L12 6" 

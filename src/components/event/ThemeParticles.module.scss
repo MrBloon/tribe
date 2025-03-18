@@ -1,0 +1,36 @@
+.particlesContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.themeMessage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(209, 213, 219, 0.2);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.confettiParticles {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+}
+
+.emojiParticles {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+}
+
+.minimalParticles {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+} 

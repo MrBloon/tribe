@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import styles from './DateTimeSelector.module.scss';
 
 interface DateTimeSelectorProps {
   startDate?: string;
@@ -19,27 +20,27 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
   timeZone = 'GMT+01:00'
 }) => {
   return (
-    <div className="flex flex-col space-y-4">
+    <div className={styles.container}>
       {/* Start and End Time Section */}
-      <div className="flex flex-col">
+      <div className={styles.timeSection}>
         {/* Start Time Row */}
-        <div className="flex items-center mb-5">
-          <div className="mr-2">
-            <div className="w-3 h-3 rounded-full bg-gray-400"></div>
+        <div className={styles.timeRow}>
+          <div className={styles.indicator}>
+            <div className={styles.startDot}></div>
           </div>
-          <span className="text-sm text-gray-600 mr-2">Début</span>
-          <div className="flex space-x-2">
+          <span className={styles.label}>Début</span>
+          <div className={styles.buttonGroup}>
             <Button
               variant="outline"
               size="sm"
-              className="px-3 py-2 rounded-md bg-gray-50 text-gray-700 text-sm border-gray-200 hover:bg-gray-100 hover:text-gray-900"
+              className={styles.dateButton}
             >
               {startDate}
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="px-3 py-2 rounded-md bg-gray-50 text-gray-700 text-sm min-w-16 text-center border-gray-200 hover:bg-gray-100 hover:text-gray-900"
+              className={styles.timeButton}
             >
               {startTime}
             </Button>
@@ -47,23 +48,23 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
         </div>
         
         {/* End Time Row */}
-        <div className="flex items-center">
-          <div className="mr-2">
-            <div className="w-3 h-3 rounded-full border-2 border-gray-400"></div>
+        <div className={styles.timeRow}>
+          <div className={styles.indicator}>
+            <div className={styles.endDot}></div>
           </div>
-          <span className="text-sm text-gray-600 mr-2">Fin</span>
-          <div className="flex space-x-2">
+          <span className={styles.label}>Fin</span>
+          <div className={styles.buttonGroup}>
             <Button
               variant="outline"
               size="sm"
-              className="px-3 py-2 rounded-md bg-gray-50 text-gray-700 text-sm border-gray-200 hover:bg-gray-100 hover:text-gray-900"
+              className={styles.dateButton}
             >
               {endDate}
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="px-3 py-2 rounded-md bg-gray-50 text-gray-700 text-sm min-w-16 text-center border-gray-200 hover:bg-gray-100 hover:text-gray-900"
+              className={styles.timeButton}
             >
               {endTime}
             </Button>
@@ -71,27 +72,10 @@ const DateTimeSelector: React.FC<DateTimeSelectorProps> = ({
         </div>
       </div>
       
-      {/* Time Zone */}
-      <div className="flex items-center ml-5">
-        <Button 
-          variant="ghost"
-          size="sm"
-          className="flex items-center space-x-2 text-sm text-gray-600 hover:text-gray-800 hover:bg-transparent p-0 h-auto"
-        >
-          <svg 
-            width="16" 
-            height="16" 
-            viewBox="0 0 16 16" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-gray-500 mr-2"
-          >
-            <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M8 4V8L10 10" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-          <span className="mr-1">{timeZone}</span>
-          <span className="text-gray-400">Paris</span>
-        </Button>
+      {/* Time Zone Section */}
+      <div className={styles.timeZoneSection}>
+        <span className={styles.timeZoneLabel}>Fuseau horaire</span>
+        <span className={styles.timeZoneValue}>{timeZone}</span>
       </div>
     </div>
   );

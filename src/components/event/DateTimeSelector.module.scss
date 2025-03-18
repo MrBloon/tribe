@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.indicator {
+  margin-right: 0.5rem;
+}
+
+.startDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background-color: #9ca3af;
+}
+
+.endDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  border: 2px solid #9ca3af;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-right: 0.5rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dateButton {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 0.875rem;
+  border-color: #e5e7eb;
+  
+  &:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+  }
+}
+
+.timeButton {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 0.875rem;
+  min-width: 4rem;
+  text-align: center;
+  border-color: #e5e7eb;
+  
+  &:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+  }
+}
+
+.timeZoneSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.timeZoneLabel {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.timeZoneValue {
+  font-size: 0.875rem;
+  color: #6b7280;
+} 

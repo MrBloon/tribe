@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Input } from "@/components/ui/input";
+import styles from './EventTitleInput.module.scss';
 
 interface EventTitleInputProps {
   placeholder?: string;
@@ -15,12 +16,12 @@ const EventTitleInput: React.FC<EventTitleInputProps> = ({
   };
   
   return (
-    <div className="w-full">
+    <div className={styles.container}>
       <Input
         type="text"
         placeholder={placeholder}
         aria-label="Event title"
-        className="w-full text-4xl font-light text-gray-500 bg-transparent border-none shadow-none placeholder:text-gray-400 focus-visible:ring-0 px-0"
+        className={styles.input}
         onChange={handleTitleChange}
       />
     </div>

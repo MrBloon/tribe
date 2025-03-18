@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import styles from './CreateEventButton.module.scss';
 
 interface CreateEventButtonProps {
   onClick?: () => void;
@@ -15,7 +16,7 @@ const CreateEventButton: React.FC<CreateEventButtonProps> = ({
   return (
     <Button
       variant="default"
-      className="w-full py-3 px-4 bg-[#8B0000] text-white hover:bg-[#7a0000]"
+      className={styles.createEventButton}
       onClick={onClick}
     >
       {text}

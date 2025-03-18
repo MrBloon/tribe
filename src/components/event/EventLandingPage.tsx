@@ -8,7 +8,6 @@ import styles from './EventLandingPage.module.scss';
 import { 
   Image, 
   Plus, 
-  Grid, 
   ChevronDown, 
   Globe, 
   Clock, 
@@ -18,10 +17,18 @@ import {
   Check, 
   Users 
 } from 'lucide-react';
+import EventThemeSelector from './EventThemeSelector';
+import { useTheme } from '@/lib/ThemeContext';
+import ThemeParticles from './ThemeParticles';
 
 const EventLandingPage: React.FC = () => {
+  const { theme } = useTheme();
+  
   return (
     <div className={styles.container}>
+      {/* Theme Particles Background */}
+      <ThemeParticles theme={theme} />
+      
       {/* Header */}
       <EventHeader />
       
@@ -51,24 +58,7 @@ const EventLandingPage: React.FC = () => {
             </Card>
             
             {/* Theme Selector */}
-            <Card className={styles.themeCard}>
-              <CardContent>
-                <div className={styles.themeCardHeader}>
-                  <div className={styles.themeCardIconContainer}>
-                    <div className={styles.themeCardIcon}>
-                      <Grid size={16} className="text-white" strokeWidth={1.5} />
-                    </div>
-                    <div className={styles.themeCardText}>
-                      <p className={styles.themeCardTitle}>Thème</p>
-                      <p className={styles.themeCardSubtitle}>Minimal</p>
-                    </div>
-                  </div>
-                  <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 p-0 h-8 w-8">
-                    <ChevronDown size={16} strokeWidth={1.5} />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <EventThemeSelector />
           </div>
           
           {/* Right Column - Event Form */}

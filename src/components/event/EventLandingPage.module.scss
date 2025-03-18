@@ -237,10 +237,13 @@
 
 .dateTimeSection {
   color: white;
+  background-color: #1E2D54;
   display: flex;
+  border-radius: .375rem;
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  padding: 1rem;
 }
 
 .dateTimeRow {

@@ -1,0 +1,211 @@
+.select {
+  // Base styles for the Select component
+}
+
+.selectGroup {
+  // Styles for the SelectGroup component
+}
+
+.selectValue {
+  // Styles for the SelectValue component
+  line-clamp: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectTrigger {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  color: #ffffff80;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-xs);
+  transition-property: color, box-shadow;
+  outline: none;
+
+  &[data-placeholder] {
+    color: var(--muted-foreground);
+  }
+
+  svg:not([class*='text-']) {
+    color: var(--muted-foreground);
+  }
+
+  &:focus-visible {
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px rgba(var(--ring-rgb), 0.5);
+  }
+
+  &[aria-invalid="true"] {
+    border-color: var(--destructive);
+    box-shadow: 0 0 0 3px rgba(var(--destructive-rgb), 0.2);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &[data-size="default"] {
+    height: 2.5rem;
+    width: 100%;
+  }
+
+  &[data-size="sm"] {
+    height: 2rem;
+  }
+
+  svg {
+    pointer-events: none;
+    flex-shrink: 0;
+    
+    &:not([class*='size-']) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+.selectContent {
+  position: relative;
+  z-index: 50;
+  max-height: var(--radix-select-content-available-height);
+  min-width: var(--radix-select-trigger-width);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  box-shadow: var(--shadow-md);
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[data-state="open"] {
+    animation-name: contentFadeIn;
+  }
+
+  &[data-state="closed"] {
+    animation-name: contentFadeOut;
+  }
+
+  &[data-side="top"] {
+    animation-name: contentFadeInTop;
+  }
+
+  &[data-side="bottom"] {
+    animation-name: contentFadeInBottom;
+  }
+}
+
+.selectViewport {
+  padding: 0.25rem;
+}
+
+.selectLabel {
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  line-height: 2;
+}
+
+.selectItem {
+  position: relative;
+  display: flex;
+  width: 100%;
+  cursor: default;
+  user-select: none;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.875rem;
+  outline: none;
+
+  &[data-disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &[data-highlighted] {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+.selectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectSeparator {
+  height: 1px;
+  margin: 0.25rem -0.25rem;
+  background-color: var(--border);
+}
+
+.selectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  cursor: default;
+  color: var(--foreground);
+  background-color: var(--popover);
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes contentFadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

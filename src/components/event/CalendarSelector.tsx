@@ -3,6 +3,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import styles from './CalendarSelector.module.scss';
 
 interface CalendarSelectorProps {
   calendarName?: string;
@@ -16,23 +17,23 @@ const CalendarSelector: React.FC<CalendarSelectorProps> = ({
   };
 
   return (
-    <div className="flex items-center">
+    <div className={styles.container}>
       <Button
         variant="ghost"
-        className="flex items-center space-x-2 py-2 rounded-md hover:bg-neutral-50 focus-visible:ring-0"
+        className={styles.button}
         onClick={handleCalendarClick}
       >
-        <Avatar className="h-6 w-6 bg-blue-400 text-white">
-          <AvatarFallback className="text-xs">C</AvatarFallback>
+        <Avatar className={styles.avatar}>
+          <AvatarFallback className={styles.avatarFallback}>C</AvatarFallback>
         </Avatar>
-        <span className="text-sm text-gray-600">{calendarName}</span>
+        <span className={styles.text}>{calendarName}</span>
         <svg 
           width="16" 
           height="16" 
           viewBox="0 0 16 16" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="text-gray-400"
+          className={styles.arrowIcon}
         >
           <path 
             d="M4 6L8 10L12 6" 

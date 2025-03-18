@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import styles from './LocationInput.module.scss';
 
 interface LocationInputProps {
   placeholder?: string;
@@ -15,13 +16,13 @@ const LocationInput: React.FC<LocationInputProps> = ({
   };
   
   return (
-    <div className="flex items-center w-full">
+    <div className={styles.container}>
       <Button
         variant="outline"
-        className="flex items-center w-full p-3 h-auto rounded border border-dashed border-gray-200 hover:border-gray-300 hover:bg-transparent justify-start font-normal"
+        className={styles.button}
         onClick={handleLocationClick}
       >
-        <div className="flex items-center space-x-2 text-gray-400">
+        <div className={styles.content}>
           <svg 
             width="18" 
             height="18" 
@@ -44,7 +45,7 @@ const LocationInput: React.FC<LocationInputProps> = ({
               strokeLinejoin="round"
             />
           </svg>
-          <span className="text-sm">{placeholder}</span>
+          <span className={styles.text}>{placeholder}</span>
         </div>
       </Button>
     </div>

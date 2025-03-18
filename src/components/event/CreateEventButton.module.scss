@@ -1,0 +1,10 @@
+.createEventButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #8B0000;
+  color: white;
+  
+  &:hover {
+    background-color: #7a0000;
+  }
+} 
