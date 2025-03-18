@@ -152,8 +152,8 @@ const EventLandingPage: React.FC = () => {
                 </div>
                 
                 {/* Event Options */}
+                <h3 className={styles.optionsTitle}>Options d&apos;événement</h3>
                 <div className={styles.optionsSection}>
-                  <h3 className={styles.optionsTitle}>Options d&apos;événement</h3>
                   <div className={styles.optionsList}>
                     {/* Tickets */}
                     <div className={styles.optionRow}>

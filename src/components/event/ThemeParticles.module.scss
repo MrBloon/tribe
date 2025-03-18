@@ -4,6 +4,8 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .previewParticlesContainer {
@@ -13,6 +15,7 @@
   pointer-events: none;
   overflow: hidden;
   border-radius: 0.25rem;
+  height: 100%;
 }
 
 .themeMessage {
@@ -31,6 +34,7 @@
   inset: 0;
   background-color: transparent;
   z-index: 15;
+  max-height: 100vh;
 }
 
 .emojiParticles {
@@ -38,10 +42,12 @@
   inset: 0;
   background-color: transparent;
   z-index: -1;
+  max-height: 100vh;
 }
 
 .minimalParticles {
   position: absolute;
   inset: 0;
   background-color: transparent;
+  max-height: 100vh;
 } 
