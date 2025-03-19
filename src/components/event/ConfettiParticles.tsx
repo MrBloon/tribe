@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ThemeParticles.module.scss';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { Engine, Container } from '@tsparticles/engine';
+import { Engine } from '@tsparticles/engine';
 import { loadConfettiPreset } from '@tsparticles/preset-confetti';
 
 interface ConfettiParticlesProps {
@@ -13,25 +13,15 @@ interface ConfettiParticlesProps {
 const ConfettiParticles: React.FC<ConfettiParticlesProps> = ({ isPreview = false }) => {
   const [init, setInit] = useState(false);
   
-  // This should be run only once per application lifetime
   useEffect(() => {
     if (!init) {
       initParticlesEngine(async (engine: Engine) => {
-        // Load the confetti preset
         await loadConfettiPreset(engine);
       }).then(() => {
         setInit(true);
       });
     }
   }, [init]);
-
-  const particlesLoaded = useCallback(async (container?: Container): Promise<void> => {
-    console.log('Confetti particles loaded', container);
-  }, []);
-  
-  if (!init) {
-    return null;
-  }
 
   return (
     <Particles
@@ -82,7 +72,6 @@ const ConfettiParticles: React.FC<ConfettiParticlesProps> = ({ isPreview = false
           }
         }
       }}
-      particlesLoaded={particlesLoaded}
     />
   );
 };

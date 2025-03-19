@@ -11,35 +11,19 @@ interface EmojiParticlesProps {
 }
 
 const EmojiParticles: React.FC<EmojiParticlesProps> = ({ isPreview = false }) => {
-  console.log("🚀 ~ isPreview:", isPreview)
   const [init, setInit] = useState(false);
   
-  // Initialize tsparticles engine once
   useEffect(() => {
-    console.log("Initializing emoji particles engine");
     if (!init) {
       initParticlesEngine(async (engine: Engine) => {
-        console.log("Loading full tsparticles package");
         await loadFull(engine);
       }).then(() => {
-        console.log("Emoji particles engine initialized");
         setInit(true);
       }).catch(error => {
         console.error("Error initializing emoji particles:", error);
       });
     }
   }, [init]);
-
-  const particlesLoaded = useCallback(async (container?: Container): Promise<void> => {
-    console.log('Emoji particles loaded successfully', container);
-  }, []);
-  
-  if (!init) {
-    console.log("Emoji particles not initialized yet");
-    return null;
-  }
-
-  console.log("Rendering emoji particles");
   
   return (
     <Particles
@@ -92,7 +76,6 @@ const EmojiParticles: React.FC<EmojiParticlesProps> = ({ isPreview = false }) =>
         },
         detectRetina: true
       }}
-      particlesLoaded={particlesLoaded}
     />
   );
 };

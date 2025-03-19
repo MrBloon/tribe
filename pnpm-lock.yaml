@@ -38,6 +38,9 @@ importers:
       '@tsparticles/preset-confetti':
         specifier: ^3.2.0
         version: 3.2.0
+      '@tsparticles/preset-fireworks':
+        specifier: ^3.2.0
+        version: 3.2.0
       '@tsparticles/react':
         specifier: ^3.0.0
         version: 3.0.0(@tsparticles/engine@3.8.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -945,8 +948,14 @@ packages:
   '@tsparticles/plugin-rgb-color@3.8.1':
     resolution: {integrity: sha512-xNLqnaFUYjU+7dCHQXjZdM4UojUAVorPVmXlYmkh1xmujLljEaFTwCg1UJVlNq+fXENIFkeaf3/XT0U/q0ZBTA==}
 
+  '@tsparticles/plugin-sounds@3.8.1':
+    resolution: {integrity: sha512-cBcT0vPvq1uR3pJolj/tm+/VgCnvCoXvTZCRRazCKdXL6GqzmbINil5M/kdmQfPyzh+X8OT5Qi3JEOdlUF4KCQ==}
+
   '@tsparticles/preset-confetti@3.2.0':
     resolution: {integrity: sha512-47T8vkV37K5ZKGYZOuLtTd4ONSpnuLQ+LbKnFoh3g4zrgqzknmKTuVEFQAXQFigWWjDnHbATEnnMOIZkz+xWXQ==}
+
+  '@tsparticles/preset-fireworks@3.2.0':
+    resolution: {integrity: sha512-weLfPAxhL5CC1SkOeE0UXyWzsQyO8ggLe0LFTJ/J0+m6U9DB6PX0lvvdDf3Jh31pwGzj4QwkGIQ2FcgoUrWc2w==}
 
   '@tsparticles/react@3.0.0':
     resolution: {integrity: sha512-hjGEtTT1cwv6BcjL+GcVgH++KYs52bIuQGW3PWv7z3tMa8g0bd6RI/vWSLj7p//NZ3uTjEIeilYIUPBh7Jfq/Q==}
@@ -3175,6 +3184,10 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.8.1
 
+  '@tsparticles/plugin-sounds@3.8.1':
+    dependencies:
+      '@tsparticles/engine': 3.8.1
+
   '@tsparticles/preset-confetti@3.2.0':
     dependencies:
       '@tsparticles/basic': 3.8.1
@@ -3187,6 +3200,19 @@ snapshots:
       '@tsparticles/updater-rotate': 3.8.1
       '@tsparticles/updater-tilt': 3.8.1
       '@tsparticles/updater-wobble': 3.8.1
+
+  '@tsparticles/preset-fireworks@3.2.0':
+    dependencies:
+      '@tsparticles/basic': 3.8.1
+      '@tsparticles/engine': 3.8.1
+      '@tsparticles/plugin-emitters': 3.8.1
+      '@tsparticles/plugin-emitters-shape-square': 3.8.1
+      '@tsparticles/plugin-sounds': 3.8.1
+      '@tsparticles/shape-line': 3.8.1
+      '@tsparticles/updater-destroy': 3.8.1
+      '@tsparticles/updater-life': 3.8.1
+      '@tsparticles/updater-rotate': 3.8.1
+      '@tsparticles/updater-stroke-color': 3.8.1
 
   '@tsparticles/react@3.0.0(@tsparticles/engine@3.8.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:

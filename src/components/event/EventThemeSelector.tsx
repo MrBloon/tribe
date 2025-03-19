@@ -32,6 +32,7 @@ const EventThemeSelector: React.FC = () => {
             <SelectItem value="Minimal">Minimal</SelectItem>
             <SelectItem value="Emoji">Emoji</SelectItem>
             <SelectItem value="Confetti">Confetti</SelectItem>
+            <SelectItem value="Firework">Firework</SelectItem>
           </SelectContent>
         </Select>
 

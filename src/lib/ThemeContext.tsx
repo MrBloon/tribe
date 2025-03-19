@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-export type ThemeType = 'Minimal' | 'Emoji' | 'Confetti';
+export type ThemeType = 'Minimal' | 'Emoji' | 'Confetti' | 'Firework';
 
 interface ThemeContextType {
   theme: ThemeType;
