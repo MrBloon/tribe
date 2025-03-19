@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ThemeParticles.module.scss';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { Engine, Container } from '@tsparticles/engine';
+import { Engine } from '@tsparticles/engine';
 import { loadFull } from "tsparticles";
 
 interface EmojiParticlesProps {
